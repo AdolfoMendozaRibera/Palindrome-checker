@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --error-color: #e74c3c;
+  --dark-color: #2c3e50;
+  --primary-color: #3498db;
+  --success-color: #2ecc71;
+  --light-color: #ecf0f1;
+  --shadow: 0 4px 6px rgba(0, 0, 0.1, 0.1);
+  --transition: all 0.3s ease;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+  color: var(--dark-color);
+  min-height: 100vh;
+}
+
+main {
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+#text-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+#text-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+#check-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+
+#check-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+#check-btn:active {
+  transform: translateY(0);
+}
+
+.result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition);
+}
+
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.palindrome {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: var(--success-color);
+  border-left: 4px solid var(--success-color);
+}
+
+.not-palindrome {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: var(--error-color);
+  border-left: 4px solid var(--error-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  label {
+    font-size: 1rem;
+  }
+  
+  #text-input, #check-btn {
+    padding: 10px 12px;
+  }
+}
