@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const checkBtn = document.getElementById('check-btn');
-  const textInput = document.getElementById('text-input');
   const resultDiv = document.getElementById('result');
+  const textInput = document.getElementById('text-input');
+  const checkBtn = document.getElementById('check-btn');
+ 
 
   const checkPalindrome = (str) => {
     const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
